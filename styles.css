@@ -11,10 +11,10 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Always two buttons per row */
+  grid-template-columns: 1fr 1fr; /* Two columns */
   gap: 10px;
   width: 100%;
-  max-width: 400px; /* Ensures it fits within mobile screens */
+  max-width: 400px; /* Ensures a good fit on mobile screens */
   padding: 20px;
 }
 
