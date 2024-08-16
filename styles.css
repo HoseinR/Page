@@ -1,47 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
+  background-color: #1e1e1e;
+  color: white;
   font-family: Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns */
-  gap: 10px;
-  width: 100%;
-  max-width: 400px; /* Ensures a good fit on mobile screens */
-  padding: 20px;
+  width: 360px;
+  height: 670px;
+  background-color: #2c2c2c;
+  border-radius: 15px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.job-button {
-  background-color: #3498db;
+.section {
+  margin-bottom: 15px;
+}
+
+.section-title {
+  font-size: 18px;
+  color: yellow;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section + .section {
+  border-top: 1px solid white;
+  padding-top: 10px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.toggle-btn {
+  background-color: #333;
   color: white;
   border: none;
-  padding: 15px;
-  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 25px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  border-radius: 8px;
+  flex: 1 1 calc(33% - 10px); /* Allow up to 3 buttons per row with space between */
   text-align: center;
+}
+
+.toggle-btn.active {
+  background-color: #28a745;
+}
+
+.save-btn {
+  background-color: white;
+  color: black;
+  font-weight: bold;
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
   width: 100%;
+  margin: 10px 0;
 }
 
-.job-button:hover {
-  background-color: #2980b9;
+.tabs {
+  display: flex;
+  justify-content: space-around;
 }
 
-.job-button.active {
-  background-color: #2ecc71;
+.tab-btn {
+  background-color: transparent;
+  color: yellow;
+  padding: 10px 40px;
+  cursor: pointer;
+  font-weight: bold;
+  border: none;
+  transition: background-color 0.3s ease;
 }
 
-@media (max-width: 480px) {
-  .job-button {
-    font-size: 14px;
-    padding: 12px;
-  }
+.tab-btn.active-tab {
+  background-color: #444;
+  border-radius: 15px;
 }
