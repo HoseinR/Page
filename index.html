@@ -3,27 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Job Titles Buttons</title>
+  <title>Mobile Mini App</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
   <div class="container">
-    <button class="job-button" onclick="toggleHighlight(this)">Software Developer</button>
-    <button class="job-button" onclick="toggleHighlight(this)">Data Scientist</button>
-    <button class="job-button" onclick="toggleHighlight(this)">UX Designer</button>
-    <button class="job-button" onclick="toggleHighlight(this)">Project Manager</button>
-    <button class="job-button" onclick="toggleHighlight(this)">Digital Marketer</button>
-    <button class="job-button" onclick="toggleHighlight(this)">Accountant</button>
-    <button class="job-button" onclick="toggleHighlight(this)">Content Writer</button>
-    <button class="job-button" onclick="toggleHighlight(this)">System Administrator</button>
+    <section class="section">
+      <h2 class="section-title">مهندسی</h2>
+      <div class="button-group">
+        <button class="toggle-btn">مهندس</button>
+        <button class="toggle-btn">طراح</button>
+        <button class="toggle-btn">مدیر</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">فناوری اطلاعات</h2>
+      <div class="button-group">
+        <button class="toggle-btn">توسعه‌دهنده</button>
+        <button class="toggle-btn">معمار</button>
+        <button class="toggle-btn">تحلیل‌گر</button>
+        <button class="toggle-btn">مشاور</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">بازاریابی</h2>
+      <div class="button-group">
+        <button class="toggle-btn">بازاریاب</button>
+        <button class="toggle-btn">استراتژیست</button>
+        <button class="toggle-btn">برنامه‌ریز</button>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">عملیات</h2>
+      <div class="button-group">
+        <button class="toggle-btn">مربی</button>
+        <button class="toggle-btn">هماهنگ‌کننده</button>
+        <button class="toggle-btn">مدیر اجرایی</button>
+        <button class="toggle-btn">اپراتور</button>
+        <button class="toggle-btn">تکنسین</button>
+      </div>
+    </section>
+
+    <button class="save-btn">ذخیره</button>
+
+    <div class="tabs">
+      <button class="tab-btn active-tab">مهارت های من</button>
+      <button class="tab-btn">آگهی ها</button>
+    </div>
   </div>
 
   <script>
-    function toggleHighlight(button) {
-      button.classList.toggle("active");
-    }
-  </script>
+    const buttons = document.querySelectorAll('.toggle-btn');
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const saveButton = document.querySelector('.save-btn');
 
+    // Toggle button color
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('active');
+      });
+    });
+
+    // Tab selection behavior
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active-tab'));
+        button.classList.add('active-tab');
+      });
+    });
+
+    // Save button click effect
+    saveButton.addEventListener('click', () => {
+      saveButton.style.backgroundColor = '#28a745'; // Change to green on click
+      saveButton.style.color = 'white'; // Change text color to white
+      setTimeout(() => {
+        saveButton.style.backgroundColor = 'white'; // Revert back to white after 1 second
+        saveButton.style.color = 'black'; // Revert text color to black
+      }, 1000);
+    });
+  </script>
 </body>
 </html>
